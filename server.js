@@ -99,18 +99,30 @@ const options = {
 function dataCounter(inputs) {
     let counter = 0;
     for (const input of inputs) {
-        if (input.postId === 1) counter += 1;
+        if (input.postId === 1) {
+            counter += 1;
+            console.log('input.postId:' + input.postId);
+            console.log('input.email:' + input.email);
+        }
     }
     return counter;
 };
 
 const req = http.request(options, function(response) {
     response.setEncoding('utf8');
+    var body = '';
     response.on('data', chunk => {
-        console.log('number of posts:' + dataCounter(chunk));
+        body += chunk;
     });
 
     response.on('end', () => {
+        console.log('body:' + body);
+        var data = JSON.parse(body);
+        console.log('number of posts:' + dataCounter(data));
+        console.log('data:' + data);
+        console.log('data[0]:' + data[0]);
+        console.log('data[0].id:' + data[0].id);
+        console.log('data[0].email:' + data[0].email);
         console.log('end of GET request');
     });
 });
