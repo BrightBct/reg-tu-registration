@@ -12,7 +12,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
-    res.render('index', {name: 'Songsakdi'});
+    res.render('index', {fname: 'Songsakdi', lName: 'Rongviri'});
 });
 
 app.listen(PORT, function () {
@@ -89,16 +89,25 @@ app.get('/api', function (req, res) {
 
 const options = {
     hostname: 'jsonplaceholder.typicode.com',
-    path: '/todos/1',
+    path: '/posts/1/comments',
     method: 'GET',
     'headers': {
         'Content-Type': 'application/json',
     }
 };
-const req = http.request(options, response => {
+
+function dataCounter(inputs) {
+    let counter = 0;
+    for (const input of inputs) {
+        if (input.postId === 1) counter += 1;
+    }
+    return counter;
+};
+
+const req = http.request(options, function(response) {
     response.setEncoding('utf8');
     response.on('data', chunk => {
-        console.log('data:' + chunk);
+        console.log('number of posts:' + dataCounter(chunk));
     });
 
     response.on('end', () => {
