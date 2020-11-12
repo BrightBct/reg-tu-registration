@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css?family=Kanit|Merriweather" rel="stylesheet">
+<html>
+
+<style>
+
+img {
+  border: 20px white;
+  display: block;
+  margin-left: 150px;
+  margin-right: auto;
+ }
+ 
+
+body {
+    background: url("https://cdn.discordapp.com/attachments/647841986686091264/775556002212478976/maxresdefault.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+   
+}
+
+.login-box {
+    font-family: 'Kanit', sans-serif;
+  margin-top: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #ffcc00;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ffcc00;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+</style>
+
+<h1><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Emblem_of_Thammasat_University.svg/1024px-Emblem_of_Thammasat_University.svg.png" style="width:240px;height:240px;"></h1>
+
+
+
+<div class="login-box">
+  <h2>เข้าสู่ระบบ(นักศึกษา)</h2>
+
+<form action="/menu" >
+    <div class="user-box">
+      <input type="text" name="" required="" >
+      <label>รหัสนักศึกษา</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="" required="">
+      <label>รหัสผ่าน</label>
+
+     </div>
+        <input class = 'button' type="submit"  value="เข้าสู่ระบบ" >
+     </a>
+  </form>
+    
+</div>
+</html>

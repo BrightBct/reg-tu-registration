@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html>
+<style>
+  
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: white;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.box {
+ float :right;
+ margin-right:50%;
+ background-color: whitesmoke;
+ color: black;
+}
+.button {
+  background-color: #f8e59c;
+  border: 2px solid black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1{padding:14px 55px;}
+.button2{color: red;}
+.front{
+    font-size: 35px;
+}
+img {
+  border: 20px white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ body {
+    background-color: #e6e5e5;
+ }
+ aside {
+  float: left;
+  border: 2px solid black;
+  background-color: #e4b49a ;
+  width:300px;
+  height: 700px;
+  margin-bottom: 100px;
+  text-align: center;
+
+ }
+ section{
+  float :right;
+  margin-right:50%
+ }
+ .หัวข้อ{
+    position:absolute;
+    top: 45%;
+    left: 35%;
+}
+.หัวข้อ2{
+    position:absolute;
+    top: 52%;
+    left: 35%;
+}
+.หัวข้อ3{
+    position:absolute;
+    top: 59%;
+    left: 35%;
+}
+.หัวข้อ4{
+    position:absolute;
+    top: 66%;
+    left: 35%;
+}
+.หัวข้อ5{
+    position:absolute;
+    top: 73%;
+    left: 35%;
+}
+.submit1{
+  position:absolute;
+    top: 85%;
+    left: 33%;
+}
+.submit2{
+  position:absolute;
+    top: 85%;
+    left: 43%;
+}
+h2{
+  position: absolute;
+  top:35%;
+  left: 30%;
+}
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+</style>
+<body>
+    <header>
+         <h1><img src="https://cdn.discordapp.com/attachments/647841986686091264/775757345862844486/top-menu.jpg" style="width:1500px;height:180px;"></h1>
+    </header>
+
+    <section>
+        <h2>โปรดเลือกรายการคำร้องที่ต้องการ</h2>
+        <p class="หัวข้อ">
+          <label class="container" style="font-size: 20px;"> ลงทะเบียนล่าช้า
+              <input type="checkbox">
+              <span class="checkmark"></span>
+          </label>
+        </p>
+        <p class="หัวข้อ2">
+          <label class="container" style="font-size: 20px;"> ถอนรายวิชา
+              <input type="checkbox">
+              <span class="checkmark"></span>
+          </label>
+       </p>
+       <p class="หัวข้อ3">
+        <label class="container" style="font-size: 20px;"> ขอจดทะเบียนศึกษารายวิชาข้ามโครงการ
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+      </p>
+      <p class="หัวข้อ4">
+        <label class="container" style="font-size: 20px;"> ขอลาออก
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+      </p>
+      <p class="หัวข้อ5">
+        <label class="container" style="font-size: 20px;"> อื่นๆ
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+      </p>
+        <form action="/form">  
+          <input class = 'submit1' type="submit"  value="ยืนยัน" >
+        </form>
+        <form action="/menu">  
+          <input class = 'submit2' type="submit"  value="ยกเลิก" >
+        </form>
+    </section>
+
+    <aside>
+      <br><br><br>
+       <form method="get" action="/menu">
+          <button class="button  button1">หน้าแรก</button><br><br>
+       </form>
+       <form method="get" action="/request">
+          <button class="button ">รายการคำร้อง</button><br><br>
+       </form>
+       <button class="button disabled ">สถานะคำร้อง</button> <br><br><br><br><br><br><br><br>
+
+       <form method="get" action="/main">
+          <button class="button button2" >ออกจากระบบ</button><br><br><br><br>
+      </form>
+  </aside> 
+    
+</body>
+
+</html>

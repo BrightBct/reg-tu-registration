@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<link href="https://fonts.googleapis.com/css?family=Kanit|Merriweather" rel="stylesheet">
+<style>
+
+.button {
+  font-family: 'Kanit', sans-serif;
+  background-color: #f8e59c;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1{padding:14px 55px;}
+
+.button2{color: red;}
+
+.front{
+    font-family: 'Kanit', sans-serif;
+    font-size: 35px;
+}
+img {
+  border: 20px white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ body {
+    background-color: #e6e5e5;
+ }
+ aside {
+  float: left;
+  border: 2px solid black;
+  background-color: #e4b49a ;
+  width:300px;
+  height: 700px;
+  margin-bottom: 100px;
+  text-align: center;
+ }
+
+ section{
+  float :right;
+  margin-right:50%
+ }
+ .disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+</style>
+
+
+<body>
+    <header>
+         <h1><img src="https://cdn.discordapp.com/attachments/647841986686091264/775757345862844486/top-menu.jpg" style="width:1500px;height:180px;"></h1>
+          
+    </header>
+    <section>
+        <h1  class ="front">ยินดีต้อนรับเข้าสู่ระบบ...</h1>
+    </section>
+
+    <aside>
+        <br><br><br>
+         <form method="get" action="/menu">
+            <button class="button  button1">หน้าแรก</button><br><br>
+         </form>
+         <form method="get" action="/request">
+            <button class="button ">รายการคำร้อง</button><br><br>
+         </form>
+         <button class="button disabled ">สถานะคำร้อง</button> <br><br><br><br><br><br><br><br>
+
+         <form method="get" action="/main">
+            <button class="button button2" >ออกจากระบบ</button><br><br><br><br>
+        </form>
+    </aside> 
+
+</body>
+
+</html>

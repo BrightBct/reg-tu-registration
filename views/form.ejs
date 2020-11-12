@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html>
+<link href="https://fonts.googleapis.com/css?family=Kanit|Merriweather" rel="stylesheet">
+<style>
+
+lable{
+    border: 3px solid #555;
+}
+
+html{
+font-family: 'Kanit', sans-serif;
+}
+
+.topic{
+    background-color: #f8e59c;
+    border: 2px solid black;
+    padding: 12px 130px;
+    text-align: center; 
+    float :left;
+}
+
+.button {
+  font-family: 'Kanit', sans-serif;
+  background-color: #f8e59c;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1{padding:14px 55px;}
+
+.button2{color: red;}
+
+.front{
+    font-size: 35px;
+}
+img {
+  border: 20px white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ body {
+    background-color: #e6e5e5;
+    
+ }
+
+ aside {
+  float: left;
+  border: 2px solid black;
+  background-color: #e4b49a ;
+  width:300px;
+  height: 700px;
+  margin-bottom: 100px;
+  text-align: center;
+ }
+
+ section{
+  float :right;
+  margin-right: 650px;
+ }
+
+ .disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.เรื่อง{
+   position:absolute;
+   top: 46%;
+}
+.เรียน{
+   position:absolute;
+   top: 58%;
+}
+.ชื่อสกุล{
+   position:absolute;
+   top: 70%;
+}
+.สาขา{
+   position:absolute;
+   top: 81%
+}
+.เขต{
+    position:absolute;
+    top: 92%;
+}
+.เลขทะเบียน{
+   position:absolute;
+   top: 70%;
+   left: 700px;
+}
+.ชั้นปี{
+   position:absolute;
+   top: 70%;
+   left: 1000px;
+}
+.บ้านเลขที่{
+  position:absolute;
+   top:81%;
+   left: 715px;
+}
+.แขวง{
+   position:absolute;
+   top: 81%;
+   left: 1000px;
+}
+.จังหวัด{
+   position:absolute;
+   top: 92%;
+   left: 720px;
+}
+.เบอนศ{
+   position:absolute;
+   top: 92%;
+   left: 1000px;
+}
+.เบอผปค{
+   position:absolute;
+   top: 103%;
+}
+.อจที่ปรึกษา{
+   position:absolute;
+   top: 103%;
+   left: 780px;
+}
+  input[type=text] {
+      
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  transition: 0.5s;
+  outline: none;
+  
+}  
+.next{
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: white;
+  color:#4CAF50;
+  font-family: 'Kanit', sans-serif;
+  position:absolute;
+  top: 120%;
+  left: 780px;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius:28px;
+}
+
+</style>
+
+<body>
+    <header>
+        <h1><img src="https://cdn.discordapp.com/attachments/647841986686091264/775757345862844486/top-menu.jpg" style="width:1500px;height:180px;"></h1>
+
+    </header>
+
+    <section>
+        <h1  class ="topic">รายละเอียดคำร้อง</h1>
+
+
+    <div class="เรื่อง">
+        <label for="fname" >เรื่อง :</label>
+        <input type="text" id="fname" name="fname" style="width: 250%;"><br><br>
+    </div>
+
+    <div class="เรียน">
+        <label for="fname">เรียน :</label>
+        <input type="text" id="fname" name="fname" style="width: 250%;"><br><br>
+    </div>
+
+    <div class = "ชื่อสกุล">
+        <label for="fname">ชื่อ-สกุล :</label>
+        <input type="text" id="fname" name="fname"><br><br>
+    </div>
+
+    <div class="สาขา">
+        <label for="fname">สาขาวิชา :</label>
+        <input type="text" id="fname" name="fname"><br><br>
+    </div>
+
+    <div class="เลขทะเบียน">
+        <label for="fname" >เลขทะเบียน :</label>
+        <input type="text" id="fname" name="fname"><br><br>
+    </div>
+
+    <div class="ชั้นปี">
+        <label for="fname">ชั้นปี :</label>
+        <input type="text" id="fname" name="fname"><br><br>
+    </div>
+
+    <div class="บ้านเลขที่">
+        <label for="fname">บ้านเลขที่ :</label>
+        <input type="text" id="fname" name="fname"><br><br>
+    </div>
+
+    <div class="แขวง">
+        <label for="fname">แขวง/ตำบล :</label>
+        <input type="text" id="fname" name="fname"><br><br>
+    </div>
+
+    <div class="เขต">
+        <label for="fname">เขต/อำเภอ :</label>
+        <input type="text" id="fname" name="fname"><br><br>
+    </div>
+
+    <div class="จังหวัด">
+        <label for="fname">จังหวัด :</label>
+        <input type="text" id="fname" name="fname"><br><br>
+    </div>
+
+    <div class="เบอนศ">
+        <label for="fname">เบอร์โทรศัพท์ติดต่อนักศึกษา :</label>
+        <input type="text" id="fname" name="fname" style="width: 75%;"><br><br>
+    </div>
+
+    <div class="เบอผปค">
+        <label for="fname">เบอร์โทรศัพท์ติดต่อผู้ปกครอง :</label>
+        <input type="text" id="fname" name="fname" style="width: 75%;"><br><br>
+    </div>
+
+    <div class="อจที่ปรึกษา">
+        <label for="fname">อาจารย์ที่ปรึกษา :</label>
+        <input type="text" id="fname" name="fname"><br><br>
+    </div>
+    <div><form method="get" action="/nextform">
+        <button class="next" >หน้าถัดไป</button><br><br><br><br>
+         </form>
+    </div>
+ 
+    </section>
+ 
+    <aside>
+        <br><br><br>
+         <form method="get" action="/menu">
+            <button class="button  button1">หน้าแรก</button><br><br>
+         </form>
+         <form method="get" action="/request">
+            <button class="button ">รายการคำร้อง</button><br><br>
+         </form>
+         <button class="button disabled ">สถานะคำร้อง</button> <br><br><br><br><br><br><br><br>
+
+         <form method="get" action="/main">
+            <button class="button button2" >ออกจากระบบ</button><br><br><br><br>
+        </form>
+    </aside> 
+
+</body>
+
+</html>
+
+<script>
+    
+</script>
