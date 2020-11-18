@@ -61,24 +61,7 @@ var req = https.request(options, function (res) {
   });
 });
 
-
-// function dataCounter(inputs) {
-//     let counter = 0;
-//     for (const input of inputs) {
-//         if (input.postId === 1) {
-//             counter += 1;
-//             console.log('input.postId:' + input.postId);
-//             console.log('input.email:' + input.email);
-//         }
-//     }
-//     return counter;
-// };
-
 app.post("/api", async (req, res) => {
-    //const queryParams = req.query;
-    //let result = "";
-    //console.log(queryParams);
-    console.log(req.body);
     const temp = await getlogin(req.body.user, req.body.pwd);
     console.log("temp = " + temp);
     if (temp) {
@@ -86,32 +69,16 @@ app.post("/api", async (req, res) => {
         console.log(j);
         if (j.status == true) {
             res.render("menu");
-            //res.send(temp);
-            //res.send("Name th: " + j.displayname_th);
         } else {
             res.render('login');
         }
     } else {
         res.render('login');
     }
-    //console.log(result);
-    //res.send(JSON.stringify(temp));
-    //} else {
-    // res.send("login fail");
-    // }
 });
 
 const getlogin = (userName, password) => {
     return new Promise((resolve, reject) => {
-        var options = {
-            'method': 'POST',
-            'hostname': 'restapi.tu.ac.th',
-            'path': '/api/v1/auth/Ad/verify',
-            'headers': {
-            'Content-Type': 'application/json',
-            'Application-Key': 'TUb8d69cb28a011a31bd2e70bb55a3e72d595f706ad580ebc2f898260fec311d3780776cbba92e0b32b90197c98a7e11b3'
-            }
-        };
 
         var req = https.request(options, (res) => {
             var chunks = [];
@@ -138,23 +105,3 @@ const getlogin = (userName, password) => {
         req.end();
     });
 };
-
-app.get("/menu/:id", async function(req, res){ 
-    var nameid = req.params.id;
-    console.log(nameid);
-    const data = await getStudentInfo(nameid);
-    console.log(data);
-    if (data) {
-      let j = JSON.parse(data);
-      res.render("menu", 
-      {prefix: j.data.prefixname,
-       name_th: j.data.displayname_th,
-       name_en: j.data.displayname_en,
-       email: j.data.email,
-       faculty: j.data.faculty,
-       department: j.data.department
-       });
-    }
-  });
-
-
