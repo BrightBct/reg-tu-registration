@@ -21,7 +21,9 @@ app.listen(PORT, function () {
     console.log(`Listening on ${PORT}`)
 });
 app.get('/menu', function (req, res) {
-    res.render('menu')
+    res.render('menu',{
+        name_en: array[3],
+    });
 });
 app.get('/main', function (req, res) {
     res.render('login')
@@ -34,6 +36,18 @@ app.get('/form', function (req, res) {
 });
 app.get('/nextform', function (req, res) {
     res.render('form2')
+});
+app.get('/information', function (req, res) {
+    res.render('information', {
+            tu_status: array[0],
+            username: array[1],
+            name_th: array[2],
+            name_en: array[3],
+            email: array[4],
+            type: array[5],
+            department: array[6],
+            faculty: array[7]
+    })
 });
 var options = {
   'method': 'POST',
@@ -61,6 +75,8 @@ var req = https.request(options, function (res) {
   });
 });
 
+let array = [];
+
 app.post("/api", async (req, res) => {
     const temp = await getlogin(req.body.user, req.body.pwd);
     console.log("temp = " + temp);
@@ -68,7 +84,24 @@ app.post("/api", async (req, res) => {
         let j = JSON.parse(temp);
         console.log(j);
         if (j.status == true) {
-            res.render("menu");
+                array[0] = j.tu_status;
+                array[1] = j.username,
+                array[2] = j.displayname_th,
+                array[3] = j.displayname_en,
+                array[4] = j.email,
+                array[5] = j.type,
+                array[6] = j.department,
+                array[7] = j.faculty
+            res.render("menu", {
+                tu_status: j.tu_status,
+                username: j.username,
+                name_th: j.displayname_th,
+                name_en: j.displayname_en,
+                email: j.email,
+                type: j.type,
+                department: j.department,
+                faculty: j.faculty
+            });
         } else {
             res.render('login');
         }
@@ -105,3 +138,39 @@ const getlogin = (userName, password) => {
         req.end();
     });
 };
+
+app.get("/menu/:id", async function(req, res){ 
+    var nameid = req.params.id;
+    console.log(nameid);
+    const data = await getStudentInfo(nameid);
+    console.log(data);
+    if (data) {
+     let j = JSON.parse(data);
+     if(j.type == 'student'){
+        res.render("menu", 
+        {
+            tu_status: j.tu_status,
+            username: j.username,
+            name_th: j.displayname_th,
+            name_en: j.displayname_en,
+            email: j.email,
+            type: j.type,
+            department: j.department,
+            faculty: j.faculty
+        });
+     }
+     else if(j.type == 'employee'){
+        res.render("menu", 
+        {
+            tu_status: j.tu_status,
+            username: j.username,
+            name_th: j.displayname_th,
+            name_en: j.displayname_en,
+            email: j.email,
+            type: j.type,
+            department: j.department,
+            organization: j.organization
+        });
+     }
+    }
+});

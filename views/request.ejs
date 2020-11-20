@@ -1,87 +1,81 @@
 ﻿<!DOCTYPE html>
 <html>
+<link href="https://fonts.googleapis.com/css?family=Kanit|Merriweather" rel="stylesheet">
 <style>
-  
-.container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+ li{
+    font-family: 'Kanit', sans-serif;
+    }
+.contact{
+ width: 10%;
+ height: 130%;
 }
-
-.container input {
+.textbox{
+  font-family: 'Kanit', sans-serif;
   position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: white;
-}
-
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-.container input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
-
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-.container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.box {
- float :right;
- margin-right:50%;
- background-color: whitesmoke;
- color: black;
-}
-.button {
-  background-color: #f8e59c;
-  border: 2px solid black;
-  color: black;
-  padding: 15px 32px;
+  top: 55%;
+  left: 15%;
+  width: 400px;
+  transform: translate(-50%, -50%);
+  background: rgba(201, 201, 201, 0.5);
+  box-sizing: border-box;
+  font-size: 30px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-  cursor: pointer;
 }
-.button1{padding:14px 55px;}
+.container {
+  position: relative;
+  width: 100%;
+  height: 130%;
+}
+
+.navbar-image {
+  width: 100%;
+  height: 130%;
+  
+}
+
+.firstbtn{
+  left: 8%;
+  width: 10%;
+  background-color: #bf1824;
+  min-width:250px;
+  min-height:60px;
+}
+
+.secbtn{
+  left: 24.3%;
+  width: 10%;
+  background-color: rgb(194, 189, 189);  
+  min-width:250px;
+  min-height:60px;
+}
+
+.container .btn {
+  top :89%;
+  font-family: 'Kanit', sans-serif;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: black;
+  font-size: 16px;
+  padding: 20px 35px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.container .btn:hover {
+  opacity: 0.8;
+}
+
+.button1{
+   padding:14px 55px;
+
+}
+
 .button2{color: red;}
+
 .front{
+    font-family: 'Kanit', sans-serif;
     font-size: 35px;
 }
 img {
@@ -89,142 +83,171 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin: 0;
+
  }
 
  body {
-    background-color: #e6e5e5;
+    background-image: url("https://cdn.discordapp.com/attachments/647841986686091264/779335534539046922/eiei.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
  }
- aside {
-  float: left;
-  border: 2px solid black;
-  background-color: #e4b49a ;
-  width:300px;
-  height: 700px;
-  margin-bottom: 100px;
-  text-align: center;
 
- }
- section{
-  float :right;
-  margin-right:50%
- }
- .หัวข้อ{
-    position:absolute;
-    top: 45%;
-    left: 35%;
+ h1 {
+    margin: 0;
 }
-.หัวข้อ2{
-    position:absolute;
-    top: 52%;
-    left: 35%;
-}
-.หัวข้อ3{
-    position:absolute;
-    top: 59%;
-    left: 35%;
-}
-.หัวข้อ4{
-    position:absolute;
-    top: 66%;
-    left: 35%;
-}
-.หัวข้อ5{
-    position:absolute;
-    top: 73%;
-    left: 35%;
-}
-.submit1{
-  position:absolute;
-    top: 85%;
-    left: 33%;
-}
-.submit2{
-  position:absolute;
-    top: 85%;
-    left: 43%;
-}
-h2{
+
+.dropdown {
+    top: 72%;
+    left: 96.4%;
   position: absolute;
-  top:35%;
-  left: 30%;
-}
-.disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-.ยืนยันbutton {
-  text-decoration: none;
   display: inline-block;
-  padding: 8px 16px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  left: 25%;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 1000px;
+  padding: 10px;
   background-color: white;
-  color:#4CAF50;
-  font-family: 'Kanit', sans-serif;
-  font-size: 22px;
-  font-weight: bold;
-  border-radius:28px;
+}
+
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.form-container .cancel {
+  background-color: red;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
 </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
     <header>
-         <h1><img src="https://cdn.discordapp.com/attachments/647841986686091264/775757345862844486/top-menu.jpg" style="width:1500px;height:180px;"></h1>
-    </header>
+       <div class="container">
+         <h1><img src="https://cdn.discordapp.com/attachments/647841986686091264/779335155437142026/New_Project_1_4.png" class="navbar-image"></h1>
+          <div class="dropdown">
+            <img src="https://cdn.discordapp.com/attachments/647841986686091264/779316689397481472/arrow.png"  width="22" height="22 ">
+        <div class="dropdown-content w3-dropdown-content w3-bar-block w3-border" style="right:0">
+            <form action="/information">
+                <button class="w3-bar-item w3-button">ข้อมูลส่วนตัว</button>
+            </form>
+            <form action="/main">
+                <button class="w3-bar-item w3-button">ออกจากระบบ</button>
+            </form>
+        </div>
+        </div>
+         <form method="get" action="/menu">
+            <button class="btn firstbtn "><strong>หน้าแรก</strong></button> 
+         </form>
+         <form method="get" action="/request">
+            <button class="btn secbtn"><strong>รายการคำร้อง</strong></button> 
+         </form>
+         </div>
+      </header>
+      
+      <button class="open-button" onclick="openForm()">เพิ่มรายวิชา</button>
 
-    <section>
-        <h2>โปรดเลือกรายการคำร้องที่ต้องการ</h2>
-        <p class="หัวข้อ">
-          <label class="container" style="font-size: 20px;"> ลงทะเบียนล่าช้า
-              <input type="checkbox">
-              <span class="checkmark"></span>
-          </label>
+      <div class="form-popup" id="myForm">
+        <div class='form-container'>
+        <h1>เงื่่อนไขและข้อตกลง</h1>
+
+        <p><span style="font-size: 22px;">
+          1.การจดทะเบียนล่าช้าชำระผ่านออนไลน์
+          จะเปิดให้ดำเนินการภายในระยะเวลาที่มหาวิทยาลัยกำหนดตามปฏิกินกิจกรรม
+          หรือประกาศของโครงการพิเศษ
+        </span>
         </p>
-        <p class="หัวข้อ2">
-          <label class="container" style="font-size: 20px;"> ถอนรายวิชา
-              <input type="checkbox">
-              <span class="checkmark"></span>
-          </label>
-       </p>
-       <p class="หัวข้อ3">
-        <label class="container" style="font-size: 20px;"> ขอจดทะเบียนศึกษารายวิชาข้ามโครงการ
-            <input type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-      </p>
-      <p class="หัวข้อ4">
-        <label class="container" style="font-size: 20px;"> ขอลาออก
-            <input type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-      </p>
-      <p class="หัวข้อ5">
-        <label class="container" style="font-size: 20px;"> อื่นๆ
-            <input type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-      </p>
-        <form action="/form">  
-          <input class = 'submit1 ยืนยันbutton' type="submit"  value="ยืนยัน" >
+        <p><span style="font-size: 22px;">
+          2.นักศึกษาจำเป็นจะต้องจดทะเบียนล่าช้า ผ่านระบบออนไลน์ด้วยตนเองเท่านั้น
+          ห้ามให้สิทธิ์คนอื่นดำเนินการแทน หากเกิดข้อผิดพลาดถือเป็นความรับผิดชอบของนักศึกษา
+        </span>
+        </p>
+        <p><span style="font-size: 22px;">
+          3.นักศึกษาจำเป็นต้องมีเวลาในการเข้าเรียน ไม่ต่ำกว่า 70% จึงสามารถจดทะเบียนเรียนในรายวิชาได้
+        </span>
+        </p>
+        <p><span style="font-size: 22px;">
+          4.นักศึกษาจำเป็นต้องมีเหตุผลที่เหมาะสมในการยื่นคำร้องจดกะเบียนล่าช้า
+        </span>
+        </p>
+        <p><span style="font-size: 22px;">
+          5.นักศึกษาจำเป็นต้องตรวจสอบความถูกต้องก่อนกดปุ่มชำระเงิน หากเกิดข้อผิดพลาด
+          ถือเป็นความรับผิดชอบของนักศึกษา
+        </span>
+        </p>
+        <form method="GET" action='form' contenteditable="false" data-new-gr-c-s-check-loaded="14.984.0 data-gr-ext-installed">
+          <input type="submit" value="ยอมรับ">
+        
+          <input type="button" value="ไม่ยอมรับ" onclick="closeForm()">
         </form>
-        <form action="/menu">  
-          <input class = 'submit2 ยืนยันbutton' type="submit"  value="ยกเลิก" >
-        </form>
-    </section>
-
-    <aside>
-      <br><br><br>
-       <form method="get" action="/menu">
-          <button class="button  button1">หน้าแรก</button><br><br>
-       </form>
-       <form method="get" action="/request">
-          <button class="button ">รายการคำร้อง</button><br><br>
-       </form>
-       <button class="button disabled ">สถานะคำร้อง</button> <br><br><br><br><br><br><br><br>
-
-       <form method="get" action="/main">
-          <button class="button button2" >ออกจากระบบ</button><br><br><br><br>
-      </form>
-  </aside> 
-    
+      </div>
+      </div>
+        <script>
+          function openForm() {
+            document.getElementById("myForm").style.display = "block";
+          }
+          
+          function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+          }
+          </script>
 </body>
 
 </html>
