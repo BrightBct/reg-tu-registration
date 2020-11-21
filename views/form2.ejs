@@ -2,98 +2,81 @@
 <html>
 <link href="https://fonts.googleapis.com/css?family=Kanit|Merriweather" rel="stylesheet">
 <style>
-
-.container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+ li{
+    font-family: 'Kanit', sans-serif;
+    }
+.contact{
+ width: 10%;
+ height: 130%;
 }
-
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: white;
-}
-
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-.container input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
-
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-.container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-/* ก๊อปมาจากเน็ต */
-
-html{
-font-family: 'Kanit', sans-serif;
-}
-
-.topic{
-    position:absolute;
-    top: 30%;
-    left: 37%;
-    float :left;
-}
-
-.button {
+.textbox{
   font-family: 'Kanit', sans-serif;
-  background-color: #f8e59c;
-  color: black;
-  padding: 15px 32px;
+  position: absolute;
+  top: 55%;
+  left: 15%;
+  width: 400px;
+  transform: translate(-50%, -50%);
+  background: rgba(201, 201, 201, 0.5);
+  box-sizing: border-box;
+  font-size: 30px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-  cursor: pointer;
+}
+.container {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.button1{padding:14px 55px;}
+.navbar-image {
+  width: 100%;
+  height: 130%;
+  
+}
+
+.firstbtn{
+  left: 8%;
+  width: 10%;
+  background-color: #bf1824;
+  min-width:250px;
+  min-height:60px;
+}
+
+.secbtn{
+  left: 24.3%;
+  width: 10%;
+  background-color: rgb(194, 189, 189);  
+  min-width:250px;
+  min-height:60px;
+}
+
+.container .btn {
+  top :89%;
+  font-family: 'Kanit', sans-serif;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: black;
+  font-size: 16px;
+  padding: 20px 35px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.container .btn:hover {
+  opacity: 0.8;
+}
+
+.button1{
+   padding:14px 55px;
+
+}
 
 .button2{color: red;}
 
 .front{
+    font-family: 'Kanit', sans-serif;
     font-size: 35px;
 }
 img {
@@ -101,366 +84,73 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin: 0;
+
  }
 
  body {
-    background-color:#e6e5e5;
-    
+    background-image: url("https://cdn.discordapp.com/attachments/647841986686091264/779335534539046922/eiei.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
  }
 
- aside {
-  float: left;
-  border: 2px solid black;
-  background-color: #e4b49a ;
-  width:300px;
-  height: 1000px;
-  margin-bottom: 100px;
-  text-align: center;
- }
-
- section{
-  float :right;
-  margin-right: 650px;
- }
-
- .disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
- }
- .pic{
-    position:absolute;
-    top: 40%;
-    left: 35%;
-    object-fit: cover;
-    width: 60px;
-    height: 337px;
-    }
-
-  input[type=text] {
-  padding: 5px 5px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 3px solid #ccc;
-  transition: 0.5s;
-  outline: none;
-}  
-.หัวข้อ{
-    position:absolute;
-    top: 40.7%;
-    left: 35%;
-}
-.ภาค{
-    position:absolute;
-    top: 40%;
-    left: 51.5%;
-    }
-.รหัสวิชา{
-    position:absolute;
-    top: 46%;
-    left: 34.5%;
-}
-.ชื่อวิชา{
-    position:absolute;
-    top: 46%;
-    left: 51.5%;
-}
-.เซคชั่น{
-    position:absolute;
-    top: 46%;
-    left: 80.5%;
+ h1 {
+    margin: 0;
 }
 
-.หัวข้อ2{
-    position:absolute;
-    top: 52.7%;
-    left: 35%;
-}
-.ภาค2{
-    position:absolute;
-    top: 52%;
-    left: 51.5%;
-    }
-.รหัสวิชา2{
-    position:absolute;
-    top: 58%;
-    left: 34.5%;
-}
-.ชื่อวิชา2{
-    position:absolute;
-    top: 58%;
-    left: 51.5%;
-}
-.เซคชั่น2{
-    position:absolute;
-    top: 58%;
-    left: 80.5%;
-}
-
-.หัวข้อ3{
-    position:absolute;
-    top: 64.7%;
-    left: 35%;
-}
-.ภาค3{
-    position:absolute;
-    top: 64%;
-    left: 51.5%;
-    }
-.รหัสวิชา3{
-    position:absolute;
-    top: 70%;
-    left: 34.5%;
-}
-.ชื่อวิชา3{
-    position:absolute;
-    top: 70%;
-    left: 51.5%;
-}
-.เซคชั่น3{
-    position:absolute;
-    top: 70%;
-    left: 80.5%;
-}
-.ลาก่อน{
-    position:absolute;
-    top: 80%;
-    left: 35%;
-}
-.ตั่งแต่ภาค{
-    position:absolute;
-    top: 79.2%;
-    left: 43%;
-}
-.ถึงปี{
-    position:absolute;
-    top: 79.6%;
-    left: 61%;
-}
-.textarea1 {
-  width: 50%;
-  height: 150px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  font-size: 16px;
-  resize: none;
-  position:absolute; 
-  top: 113%; 
-  left: 46.5%;
-}
-.textarea2 {
-  width: 50%;
-  height: 150px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  font-size: 16px;
-  resize: none;
-  position:absolute; 
-  top: 138%; 
-  left: 46.8%;
-}
-.next{
-  text-decoration: none;
+.dropdown {
+    top: 72%;
+    left: 96.4%;
+  position: absolute;
   display: inline-block;
-  padding: 8px 16px;
-  background-color: white;
-  color:#4CAF50;
-  font-family: 'Kanit', sans-serif;
-  position:absolute;
-  top: 164%;
-  left: 1000px;
-  font-size: 22px;
-  font-weight: bold;
-  border-radius:28px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  cursor: pointer;
 }
-</style>
 
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
     <header>
-         <h1><img src="https://cdn.discordapp.com/attachments/647841986686091264/775757345862844486/top-menu.jpg" style="width:1500px;height:180px;"></h1>     
-    </header>
-
-
-    <section>
-        <h1 class ="topic">ประสงค์จะยื่นคำร้อง</h1>
-
-    <p class="หัวข้อ">
-        <label class="container" style="font-size: 20px;"> จดทะเบียนล่าช้า/เพิ่มถอน
-            <input type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </p>
-    <p class="ภาค">
-        <label for="fname" style="font-size: 20px;" >ภาคการศึกษาที่ :</label>
-        <input type="text" id="fname" name="fname"><br><br>
-    </p>
-    <p class="รหัสวิชา">
-        <label for="fname" style="font-size: 20px; color:#8c8a8b" >รหัสวิชา :</label>
-        <input type="text" id="fname" name="fname"><br><br>
-    </p>
-    <p class="ชื่อวิชา">
-        <label for="fname" style="font-size: 20px; color:#8c8a8b" >ชื่อวิชา :</label>
-        <input type="text" id="fname" name="fname" style="width: 350px"><br><br>
-    </p>
-    <p class="เซคชั่น">
-        <label for="fname" style="font-size: 20px; color:#8c8a8b" >Section :</label>
-        <input type="text" id="fname" name="fname"><br><br>
-    </p>
-
-    <p class="หัวข้อ2">
-        <label class="container" style="font-size: 20px;"> จดทะเบียนล่าช้า/เพิ่มถอน
-            <input type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </p>
-    <p class="ภาค2">
-        <label for="fname" style="font-size: 20px;" >ภาคการศึกษาที่ :</label>
-        <input type="text" id="fname" name="fname"><br><br>
-    </p>
-    <p class="รหัสวิชา2">
-        <label for="fname" style="font-size: 20px; color:#8c8a8b" >รหัสวิชา :</label>
-        <input type="text" id="fname" name="fname"><br><br>
-    </p>
-    <p class="ชื่อวิชา2">
-        <label for="fname" style="font-size: 20px; color:#8c8a8b" >ชื่อวิชา :</label>
-        <input type="text" id="fname" name="fname" style="width: 350px"><br><br>
-    </p>
-    <p class="เซคชั่น2">
-        <label for="fname" style="font-size: 20px; color:#8c8a8b" >Section :</label>
-        <input type="text" id="fname" name="fname"><br><br>
-    </p>
-
-    <p class="หัวข้อ3">
-        <label class="container" style="font-size: 20px;"> จดทะเบียนล่าช้า/เพิ่มถอน
-            <input type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </p>
-    <p class="ภาค3">
-        <label for="fname" style="font-size: 20px;" >ภาคการศึกษาที่ :</label>
-        <input type="text" id="fname" name="fname"><br><br>
-    </p>
-    <p class="รหัสวิชา3">
-        <label for="fname" style="font-size: 20px; color:#8c8a8b" >รหัสวิชา :</label>
-        <input type="text" id="fname" name="fname"><br><br>
-    </p>
-    <p class="ชื่อวิชา3">
-        <label for="fname" style="font-size: 20px; color:#8c8a8b" >ชื่อวิชา :</label>
-        <input type="text" id="fname" name="fname" style="width: 350px"><br><br>
-    </p>
-    <p class="เซคชั่น3">
-        <label for="fname" style="font-size: 20px; color:#8c8a8b" >Section :</label>
-        <input type="text" id="fname" name="fname"><br><br>
-    </p>
-    <p class="ลาก่อน">
-        <label class="container" style="font-size: 20px;"> ขอลาออก
-            <input type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </p>
-    <p class="ตั่งแต่ภาค">
-        <label for="fname" style="font-size: 20px; color:#8c8a8b" >ตั้งแต่ภาค :</label>
-        <input type="text" id="fname" name="fname"><br><br>
-    </p>
-    <p class="ถึงปี">
-        <label for="fname" style="font-size: 20px; color:#8c8a8b" >ปีการศึกษา / :</label>
-        <input type="text" id="fname" name="fname"><br><br>
-    </p>
-        <p style="position:absolute; top: 89.6%; left: 35%; font-size: 20px;">คำรับรองผู้ปกครองนักศึกษา :</p>
-        <p style="position:absolute; top: 90.6%; left: 51.5%; color:#8c8a8b">ข้าพเจ้า</p>
-
-        <p style="position:absolute; top: 90.6%; left: 55.5%; color:#8c8a8b">
-            <label class="container" style="font-size: 16px;"> นาย
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-        </p>
-        <p style="position:absolute; top: 90.6%; left: 60.5%; color:#8c8a8b">
-            <label class="container" style="font-size: 16px;"> นาง
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-        </p>
-        <p style="position:absolute; top: 90.6%; left: 65.5%; color:#8c8a8b">
-            <label class="container" style="font-size: 16px;"> นางสาว
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-        </p>
-        <p style="position:absolute; top: 89.2%; left: 72%;">
-            <label for="fname" style="font-size: 20px; color:#8c8a8b" ></label>
-            <input type="text" id="fname" name="fname" style="width: 200px"><br><br>
-        </p>
-        <p style="position:absolute; top: 90.6%; left: 85.5%; color:#8c8a8b">เป็นผู้ปกครองของ</p>
-
-        
-        <p style="position:absolute; top: 100%; left: 35.5%; color:#8c8a8b">
-            <label class="container" style="font-size: 16px;"> นาย
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-        </p>
-        <p style="position:absolute; top: 100%; left: 40.5%; color:#8c8a8b">
-            <label class="container" style="font-size: 16px;"> นาง
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-        </p>
-        <p style="position:absolute; top: 100%; left: 45.5%; color:#8c8a8b">
-            <label class="container" style="font-size: 16px;"> นางสาว
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-        </p>
-        <p style="position:absolute; top: 98.4%; left: 52%;">
-            <label for="fname" style="font-size: 20px; color:#8c8a8b" ></label>
-            <input type="text" id="fname" name="fname" style="width: 200px"><br><br>
-        </p>
-        <p style="position:absolute; top: 100%; left: 65.8%; color:#8c8a8b">ได้รับการรับทราบการขอลาออกจากการเป็นนักศึกษามหาวิทยาลัยธรรมศาสตร์จริง</p>
-
-        <p style="position:absolute; top:110%; left: 35.5%; ">
-            <label class="container" style="font-size: 20px;"> อื่นๆ(โปรดระบุ)
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-        </p>
-        <p>
-         <form>
-              <br><br><textarea placeholder="โปรดระบุ"  class="textarea1"></textarea>
-        </form>
-        </p>
-        <p style="position:absolute; top: 135%  ; left: 32%; font-size: 20px;">เหตุผลที่ยื่นคำร้องเนื่องจาก </p>
-        <p>
-            <form>
-                 <br><br><textarea placeholder="โปรดระบุ" class="textarea2"></textarea>
-           </form>
-           </p>
-        <div><form method="get" action="/menu">
-            <button class="next" >ยืนยัน</button><br><br><br><br>
-             </form>
+       <div class="container" contenteditable="false" data-new-gr-c-s-check-loaded="14.984.0 data-gr-ext-installed">
+         <h1><img src="https://cdn.discordapp.com/attachments/647841986686091264/779335155437142026/New_Project_1_4.png" class="navbar-image"></h1>
+          <div class="dropdown">
+            <img src="https://cdn.discordapp.com/attachments/647841986686091264/779316689397481472/arrow.png"  width="22" height="22 ">
+        <div class="dropdown-content w3-dropdown-content w3-bar-block w3-border" style="right:0">
+            <form action="/information">
+                <button class="w3-bar-item w3-button">ข้อมูลส่วนตัว</button>
+            </form>
+            <form action="/main">
+                <button class="w3-bar-item w3-button">ออกจากระบบ</button>
+            </form>
         </div>
-
-    </section>
-
-    <aside>
-        <br><br><br>
+        </div>
          <form method="get" action="/menu">
-            <button class="button  button1">หน้าแรก</button><br><br>
+            <button class="btn firstbtn "><strong>หน้าแรก</strong></button> 
          </form>
          <form method="get" action="/request">
-            <button class="button ">รายการคำร้อง</button><br><br>
+            <button class="btn secbtn"><strong>รายการคำร้อง</strong></button> 
          </form>
-         <button class="button disabled ">สถานะคำร้อง</button> <br><br><br><br><br><br><br><br>
-
-         <form method="get" action="/main">
-            <button class="button button2" >ออกจากระบบ</button><br><br><br><br>
-        </form>
-    </aside> 
+         </div>
+      </header>
+      
+      
 
 </body>
 

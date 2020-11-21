@@ -156,6 +156,52 @@ img {
       <p>type: <%=type%></p>
       <p>department: <%=department%></p>
       <p>faculty: <%=faculty%></p>
+
+      
+        <div class="formBox">
+          <label for="tittle">Movie</label>
+          <input type="text" id="tittle" placeholder="Tittle">
+          </div>
+          <div class="formBox">
+          <label for="yr">Year</label>
+          <input type="text" id="yr" placeholder="Year"><br>
+        </div>
+          <div class="formBox">
+        <form method="get" action="/menu">
+          <button id="btn">Click to Add</button>
+        </form>
+        </div>
+        <div id=msg>
+          <pre></pre>
+        </div>
+           <script>
+             let movies = [];
+             
+             const addMovie = (ev)=> {
+               ev.preventDefault();
+               let movie = {
+                 tittle: document.getElementById("tittle").value,
+                 year: document.getElementById('yr').value
+               }
+               movies.push(movie);
+               document.forms[0].reset();
+      
+               console.warn('added', {movie});
+               let pre = document.querySelector('#msg pre');
+               
+                pre.textContent = '\n' + JSON.stringify(movies, '\t', 2);
+               
+             }
+      
+             document.addEventListener('DOMContentLoaded', ()=>{
+               document.getElementById('btn').addEventListener('click', addMovie);
+               sessionStorage.setItem("movie", JSON.stringify(movies));
+               document.getElementById('btn').addEventListener('click', ()=>{
+                document.location.href = "menu"
+               })
+             })
+      
+          </script>
 </body>
 
 </html>

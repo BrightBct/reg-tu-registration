@@ -6,7 +6,11 @@ var http = require('http');
 var PORT = process.env.PORT || 5000;
 var app = express();
 var bodyParser = require("body-parser");
-var ssd = "Hello"; 
+
+const Datastore = require('nedb');
+const { response } = require('express');
+const database = new Datastore('database.db');
+database.loadDatabase();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -15,10 +19,19 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
-    res.render('login', { fname: 'Rungsipon', lName: 'Kasemchotthanapat' });
+    res.render('login');
 });
 app.listen(PORT, function () {
     console.log(`Listening on ${PORT}`)
+});
+app.get('/info', function(req, res){
+    database.find({'username': array[1]}, (err, data) =>{
+        if(err){
+            res.end();
+            return;
+        }
+        res.json(data);
+    })
 });
 app.get('/menu', function (req, res) {
     res.render('menu',{
@@ -29,13 +42,28 @@ app.get('/main', function (req, res) {
     res.render('login')
 });
 app.get('/request', function (req, res) {
-    res.render('request')
+    res.render('request',{
+        name_en: array[3],
+    })
 });
 app.get('/form', function (req, res) {
-    res.render('form')
+    res.render('form', {
+        name_en: array[3],
+        username: array[1]
+    })
 });
-app.get('/nextform', function (req, res) {
-    res.render('form2')
+app.get('/form2', function (req, res) {
+    getData();
+    let a;
+    async function getData(){
+        const response = await fetch('/form');
+        const data = await response.json();
+        a = JSON.parse(JSON.stringify(data));
+        database.insert(a);
+    }
+    res.render('form2', {
+        name: a
+    })
 });
 app.get('/information', function (req, res) {
     res.render('information', {
@@ -46,8 +74,8 @@ app.get('/information', function (req, res) {
             email: array[4],
             type: array[5],
             department: array[6],
-            faculty: array[7]
-    })
+            faculty: array[7],
+    });
 });
 var options = {
   'method': 'POST',
@@ -75,23 +103,30 @@ var req = https.request(options, function (res) {
   });
 });
 
+let test = "bright";
 let array = [];
 
 app.post("/api", async (req, res) => {
-    const temp = await getlogin(req.body.user, req.body.pwd);
+    var temp = await getlogin(req.body.user, req.body.pwd);
     console.log("temp = " + temp);
     if (temp) {
         let j = JSON.parse(temp);
+
         console.log(j);
         if (j.status == true) {
                 array[0] = j.tu_status;
-                array[1] = j.username,
-                array[2] = j.displayname_th,
-                array[3] = j.displayname_en,
-                array[4] = j.email,
-                array[5] = j.type,
-                array[6] = j.department,
-                array[7] = j.faculty
+                array[1] = j.username;
+                array[2] = j.displayname_th;
+                array[3] = j.displayname_en;
+                array[4] = j.email;
+                array[5] = j.type;
+                array[6] = j.department;
+                array[7] = j.faculty;
+                database.count({"username": j.username }, function (err, count) {
+                    if(count == 0){
+                        database.insert(j);
+                    }
+                });
             res.render("menu", {
                 tu_status: j.tu_status,
                 username: j.username,
@@ -100,7 +135,7 @@ app.post("/api", async (req, res) => {
                 email: j.email,
                 type: j.type,
                 department: j.department,
-                faculty: j.faculty
+                faculty: j.faculty,
             });
         } else {
             res.render('login');
@@ -139,38 +174,3 @@ const getlogin = (userName, password) => {
     });
 };
 
-app.get("/menu/:id", async function(req, res){ 
-    var nameid = req.params.id;
-    console.log(nameid);
-    const data = await getStudentInfo(nameid);
-    console.log(data);
-    if (data) {
-     let j = JSON.parse(data);
-     if(j.type == 'student'){
-        res.render("menu", 
-        {
-            tu_status: j.tu_status,
-            username: j.username,
-            name_th: j.displayname_th,
-            name_en: j.displayname_en,
-            email: j.email,
-            type: j.type,
-            department: j.department,
-            faculty: j.faculty
-        });
-     }
-     else if(j.type == 'employee'){
-        res.render("menu", 
-        {
-            tu_status: j.tu_status,
-            username: j.username,
-            name_th: j.displayname_th,
-            name_en: j.displayname_en,
-            email: j.email,
-            type: j.type,
-            department: j.department,
-            organization: j.organization
-        });
-     }
-    }
-});
