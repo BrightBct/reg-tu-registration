@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <link href="https://fonts.googleapis.com/css?family=Kanit|Merriweather" rel="stylesheet">
+ 
+    <head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    background: white;
+    overflow: hidden;
+    position: relative;
+}
+header{
+    text-align: left;
+    background: white;
+    margin: 0 auto;
+    font-size: small;
+}
+section{
+    background-image: url("https://cdn.discordapp.com/attachments/647841986686091264/779335534539046922/eiei.png");
+    width: 1200px;
+    background-repeat: no-repeatk;
+    background-size: 100% 100%;
+    width:  auto;
+    height: 800px;
+}
+body{
+    background-image: url(" https://moodle.tu.ac.th/pluginfile.php/1/theme_lambda/pagebackground/1594184250/bg2.png");
+    background-attachment: fixed;
+}
+            
+.firstbtn{
+  left: 0%;
+ background-color: #bf1824;
+  min-width:240px;
+  min-height:53px;
+  position: absolute;
+
+}
+
+.secbtn{ 
+  left: 20%;
+  background-color: rgb(194, 189, 189);  
+  min-width:240px;
+  min-height:53px;
+  position: absolute;
+}
+
+.container .btn {
+  top: 17.5%;
+  float: left;
+  font-family: 'Kanit', sans-serif;
+  color: black;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.container .btn:hover {
+  opacity: 0.8;
+}
+.textbox{
+  font-family: 'Kanit', sans-serif;
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  padding: 15px;
+  width: 250px;
+  height: 60px;
+  background: rgba(201, 201, 201, 0.5);
+  box-sizing: border-box;
+  font-size: 20px;
+  text-align: center;
+}
+
+.dropdown {
+  top: 16.3%;
+  left: 96.4%;
+  position: absolute;
+  display: inline-block;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.font{
+  font-family: 'Kanit', sans-serif;
+}
+
+.container2{
+    width: 1000px;
+    height: 720px;
+    padding: 35px;
+    padding-left: 100px;
+    top: 70px;
+    left: 10px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    background: rgba(228, 221, 221, 0.5);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+}
+
+.form-group{
+  margin-bottom:0.5rem;
+}
+
+.form-groupLeft{
+  margin-left:1rem;
+}
+
+.form-groupLeft1{
+  margin-left:14rem;
+  background-color: #e6e5e5;
+  border-radius:28px;
+  padding: 10px 14px;
+  margin-top:0.5rem;
+}
+
+.form-groupRight{
+  margin-right:0.2rem;
+}
+
+.accept{
+    color: #4CAF50;
+
+}
+.unaccept{
+    color: red;
+}
+
+</style>
+
+    </head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <body>
+        <div class="container">
+                <header>
+                    <img src="https://cdn.discordapp.com/attachments/647841986686091264/779335155437142026/New_Project_1_4.png" style="width: 100%;">
+                    <div>
+                    <form method="get" action="/menu">
+                        <button class="btn firstbtn"><strong>หน้าแรก</strong></button> 
+                     </form>
+                     <form method="get" action="/request">
+                        <button class="btn secbtn"><strong>รายการคำร้อง</strong></button> 
+                     </form>
+                     </div>
+                     <div class="dropdown">
+                        <img src="https://cdn.discordapp.com/attachments/647841986686091264/779316689397481472/arrow.png"  width="22" height="22 ">
+                    <div class="dropdown-content w3-dropdown-content w3-bar-block w3-border font" style="right:0">
+                      <form action="/information">
+                        <button class="w3-bar-item w3-button">ข้อมูลส่วนตัว</button>
+                    </form>
+                    <form action="/main">
+                        <button class="w3-bar-item w3-button">ออกจากระบบ</button>
+                    </form>
+                    </div>
+                </header>
+                <section>
+                  <div class="container2">
+                    <form action="/menu" method="get">
+                      <div class="form-group">
+                        <label for="">เรื่อง : </label>
+                        <input name="Topic" value="จดทะเบียนล่าช้า" class="form-group"  disabled>
+                      </div>
+                      <div class="form-group">
+                        <label for="">เรียน : </label>
+                        <input type="text" name="To" value="ผอ.โครงการฯ" class="form-group"  disabled>
+                      </div>
+                      <div class="form-group">
+                        <label for="">ชั้นปีที่ : </label>
+                          <select name="college_year" disabled='true'>
+                            <option value=""><%=a.college_year%></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                          </select>
+                      </div>
+                      <div class="form-group">
+                        <label for=""><strong>ที่อยู่ที่สามารถติดต่อได้</strong></label>
+                      </div>
+                      <div class="form-group">
+                        <label for="">บ้านเลขที่ : </label>
+                        <input name="HouseNum" value="<%=a.housenum%>" class="form-group" size="5"  disabled>
+
+                        <label for="" class="form-groupLeft">แขวง/ตำบล : </label>
+                        <input name="sub_district" value="<%=a.sub_district%>" class="form-group" size="10"  disabled>
+
+                        <label for="" class="form-groupLeft">เขต/อำเภอ : </label>
+                        <input name="district" value="<%=a.district%>" class="form-group" size="10"  disabled>
+
+                        <label for="" class="form-groupLeft">จังหวัด : </label>
+                        <input name="province" value="<%=a.province%>" class="form-group" size="10"  disabled>
+
+                      </div>
+
+                      <div class="form-group">
+                        <label for="">โทรศัพท์ติดต่อนักศึกษา : </label>
+                        <input name="student_phonenumber" value="<%=a.student_phonenumber%>" class="form-group" size="10"  disabled>
+
+                        <label for="">โทรศัพท์ติดต่อผู้ปกครอง : </label>
+                        <input name="relative_phone_number" value="<%=a.relative_phone_number%>" class="form-group" size="10"  disabled>
+                      </div>
+                      <div class="form-group">
+                        <label for="">อาจารย์ที่ปรึกษา : </label>
+                        <input name="teacher" value="<%=a.teacher%>" class="form-group" size="20"  disabled>
+                      </div>
+
+                      <div class="form-group">
+                        <label for=""><strong>จดทะเบียนล่าช้า/เพิ่มล่าช้า ภาคการศึกษาที่</strong></label>
+                          <select name="semester" disabled="true">
+                            <option value="" ><%=a.semester%></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                          </select>
+                        <label for="" class="form-groupLeft">/</label>
+                          <select name="era" disabled='true'>
+                            <option value=""><%=a.era%></option>
+                            <option value="2561">2561</option>
+                            <option value="2562">2562</option>
+                            <option value="2563">2563</option>
+                            <option value="2564">2564</option>
+                            <option value="2565">2565</option>
+                            <option value="2566">2566</option>
+                            <option value="2567">2567</option>
+                            <option value="2568">2568</option>
+                            <option value="2569">2569</option>
+                            <option value="2570">2570</option>
+                          </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="">รหัสวิชา : </label>
+                        <input name="code" value="<%=a.code%>" class="form-group" size="10"  disabled>
+
+                        <label for="">ชื่อวิชา : </label>
+                        <input name="subject" value="<%=a.subject%>" class="form-group" size="10"  disabled>
+
+                        <label for="">section : </label>
+                        <select name="section" disabled='true'>
+                          <option value=""><%=a.section%></option>
+                          <option value="650001">650001</option>
+                          <option value="650002">650002</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for=""><strong>เหตุผลที่ยื่นคำร้อง</strong></label>
+                        <textarea name="reason" value="" class="form-group" rows="8" cols="80"  disabled><%=a.reason%></textarea>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="">วันที่ยื่นคำร้อง : </label>
+                        <input name="date" value="<%=a.date%>" class="form-groupRight" size="3"  disabled>
+                        <input name="month" value="<%=a.month%>" class="form-groupRight" size="3"  disabled>
+                        <input name="year" value="<%=a.year%>" class="form-groupRight" size="3"  disabled>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="">เช่น 01/02/2563</label>
+                      </div>
+
+                      <div class="form-group">
+                        <a href="javascript:history.back()" style="text-decoration: none" class="unaccept form-groupLeft1">ย้อนกลับ</a>
+                        <input type="submit" class="accept form-groupLeft1" value="ถัดไป">
+                      </div>
+                    </form>
+                  </div>
+                  
+                </section> 
+        </div>
+    </body>
+</html>
