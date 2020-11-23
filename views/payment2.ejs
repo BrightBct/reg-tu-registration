@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link href="https://fonts.googleapis.com/css?family=Kanit|Merriweather" rel="stylesheet">
+ 
+    <head>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .container{
+                width: 1200px;
+                margin: 0 auto;
+                background: white;
+                overflow: hidden;
+                position: relative;
+            }
+            header{
+                text-align: left;
+                background: white;
+                margin: 0 auto;
+                font-size: small;
+            }
+            section{
+                background-image: url("https://cdn.discordapp.com/attachments/647841986686091264/779335534539046922/eiei.png");
+                width: 1200px;
+                background-repeat: no-repeatk;
+                background-size: 100% 100%;
+                width:  auto;
+                height: 800px;
+            }
+            body{
+                background-image: url(" https://moodle.tu.ac.th/pluginfile.php/1/theme_lambda/pagebackground/1594184250/bg2.png");
+                background-attachment: fixed;
+            }
+            
+.firstbtn{
+  left: 0%;
+ background-color: #bf1824;
+  min-width:240px;
+  min-height:53px;
+  position: absolute;
+
+}
+
+.secbtn{ 
+  left: 20%;
+  background-color: rgb(194, 189, 189);  
+  min-width:240px;
+  min-height:53px;
+  position: absolute;
+}
+
+.container .btn {
+  top: 17.5%;
+  float: left;
+  font-family: 'Kanit', sans-serif;
+  color: black;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.container .btn:hover {
+  opacity: 0.8;
+}
+.textbox{
+  font-family: 'Kanit', sans-serif;
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  padding: 15px;
+  width: 250px;
+  height: 60px;
+  background: rgba(201, 201, 201, 0.5);
+  box-sizing: border-box;
+  font-size: 20px;
+  text-align: center;
+}
+
+.dropdown {
+  top: 16.3%;
+  left: 96.4%;
+  position: absolute;
+  display: inline-block;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.font{
+  font-family: 'Kanit', sans-serif;
+}
+
+.displayname{
+  position: absolute;
+  right: 12%;
+  top: 7.9%;
+  font-family: 'Kanit', sans-serif;
+  font-size: 20px;
+  color: #bf1824;
+  text-align-last: right;
+  
+}
+
+.onlinepay{
+    margin-left: 30px;
+}
+td{
+  font-family: arial, sans-serif;
+  border-collapse:collapse;
+  width: 70%;
+  height: 50px;
+  margin-left: 175px;
+  background-color: rgb(255, 255, 195);
+  margin-top: 60px;
+  border: 1px solid black;
+}
+.table{
+  margin-top: 1%;
+  width: 60%;
+}
+.paymentback{
+    background-color: rgb(255, 255, 195) ;
+    width: 700px;
+    height: 150px;
+    margin-left: 1px;
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+.closing{
+    cursor: pointer;
+    background-color: rgb(255, 255, 195);
+    border: 1px solid rgb(255, 255, 195);
+    display: inline-block;
+  
+
+}
+.closeback{
+
+    
+}
+.assem{
+    background-color: rgb(255, 255, 195);
+    border: 1px solid black;
+    width: 700px;
+    margin-left: 0.5px;
+    margin-bottom: 2px;
+}
+
+
+</style>
+    </head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <body>
+        <div class="container">
+                <header>
+                    <img src="https://cdn.discordapp.com/attachments/647841986686091264/779335155437142026/New_Project_1_4.png" style="width: 100%;">
+                    <div>
+                    <form method="get" action="/menu">
+                        <button class="btn firstbtn"><strong>หน้าแรก</strong></button> 
+                     </form>
+                     <form method="get" action="/request">
+                        <button class="btn secbtn"><strong>รายการคำร้อง</strong></button> 
+                     </form>
+                     </div>
+                     <div class="displayname"><p><%=name_en%></p></div>
+                     <div class="dropdown">
+                        <img src="https://cdn.discordapp.com/attachments/647841986686091264/779316689397481472/arrow.png"  width="22" height="22 ">
+                    <div class="dropdown-content w3-dropdown-content w3-bar-block w3-border font" style="right:0">
+                      <form action="/information">
+                        <button class="w3-bar-item w3-button">ข้อมูลส่วนตัว</button>
+                    </form>
+                    <form action="/main">
+                        <button class="w3-bar-item w3-button">ออกจากระบบ</button>
+                    </form>
+                    </div>
+                </header>
+                <section>
+                   <br> 
+                   
+                    <div class="onlinepay">
+                        <img src="https://cdn.discordapp.com/attachments/696381178969587722/780449750465773568/online_.png";> 
+                      
+                        <div class="table"> 
+                            <table style="width: 100%;">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 10.5105%;">
+                                            <div data-empty="true" style="text-align: center;"><strong>ลำดับ</strong></div>
+                                        </td>
+                                        <td style="width: 60.8108%;">
+                                            <div data-empty="true" style="text-align: center;"><strong>รายการ</strong></div>
+                                        </td>
+                                        <td style="width: 28.5285%;">
+                                            <div data-empty="true" style="text-align: center;"><strong>จำนวนเงิน(บาท)</strong></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 10.5105%;">
+                                            <div data-empty="true" style="text-align: center;">1</div>
+                                        </td>
+                                        <td style="width: 60.8108%;">&nbsp;&nbsp;&nbsp;ค่าจดทะเบียนศึกษาลักษณะรายวิชา</td>
+                                        <td style="width: 28.5285%;">&nbsp; &nbsp;16,500.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 10.5105%;">
+                                            <div style="text-align: center;">2</div>
+                                        </td>
+                                        <td style="width: 60.8108%;">&nbsp;&nbsp;&nbsp;ค่าบำรุงห้องสมุด</td>
+                                        <td style="width: 28.5285%;">&nbsp; &nbsp;1,500.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 10.5105%;">
+                                            <div style="text-align: center;">3</div>
+                                        </td>
+                                        <td style="width: 60.8108%;">&nbsp;&nbsp;&nbsp;ค่าบำรุงมหาวิทยาลัย</td>
+                                        <td style="width: 28.5285%;">&nbsp; &nbsp;1,500.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 10.5105%;">
+                                            <div style="text-align: center;">4</div>
+                                        </td>
+                                        <td style="width: 60.8108%;">&nbsp;&nbsp;&nbsp;ค่าบำรุงการศึกษาเพื่อพัฒนาการ</td>
+                                        <td style="width: 28.5285%;">&nbsp; &nbsp;10,000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 10.5105%;">
+                                            <div style="text-align: center;">5</div>
+                                        </td>
+                                        <td style="width: 60.8108%;">&nbsp;&nbsp;&nbsp;ค่าธรรมเนียมการใช้บริการเครือข่าย</td>
+                                        <td style="width: 28.5285%;">&nbsp; &nbsp;300.00</td>
+                                    </tr>
+                                    <tr>
+                                        
+                                </tbody>
+                            </table>
+
+                            <div class ="assem"style="display: flex; justify-content: flex-end; padding-right: 50px; padding-top: 5px; padding-bottom: 5px;">
+                                รวม 29,800.00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+
+                            <div class="paymentback">
+                                เลือก PAY ON-LINE เพื่อทำการชำระค่าจดทะเบียนโดยการตัดบัญชี ONLINE
+                                <div class="closeback">
+                                    <br>
+                               
+                                <a href="https://cdn.discordapp.com/attachments/775710640550445056/777479900230844446/S__4333571.jpg"><img src="https://cdn.discordapp.com/attachments/773523001823854605/780501459728990228/btn.png" style="width: 150px;" /></button>
+                            </div>
+
+
+
+
+                            </div>
+                    </div> 
+                </div>
+                    </div>
+                   
+                    
+
+
+                    
+                </section> 
+        </div>
+    </body>
+</html>

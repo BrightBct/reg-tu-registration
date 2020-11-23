@@ -472,8 +472,9 @@ a:hover, a:active {
                     </p><br>
                     <form method="GET" action='form' contenteditable="false" data-new-gr-c-s-check-loaded="14.984.0 data-gr-ext-installed">
                       <input type="submit" class="accept" value="ยอมรับ">
-                      <input type="button" value="ไม่ยอมรับ" class="unaccept" onclick="closeForm()">
+                      
                     </form>
+                    <input type="button" value="ไม่ยอมรับ" class="unaccept" onclick="x()">
                   </div>
                 </div>
 
@@ -497,6 +498,10 @@ a:hover, a:active {
                     modal3.style.display = "none";
                   }
 
+                  function x(){
+                    modal3.style.display = "none";
+                  }
+
                   </script> 
 
 
@@ -511,16 +516,28 @@ a:hover, a:active {
                     <span class="close2">&times;</span>
                     <div class="form-group">
                       <a href="default.asp" id="subjectProcess">
-                        CS264วิศวกรรมซอฟต์แวร์เบื้องต้น
-                        section 650001 ผศ.ดร.ทรงศักดิ์ รองวิริยะพาณิชย์
+                        <p id="requi"></p>
                       </a>
-                    </div>
-                    <div class="form-group">
-                      <a href="default.asp" target="_blank">This is a link</a>
                     </div>
                   </div>
 
                 </div>
+
+                <script>
+                  let print = document.getElementById('requi');
+                  let n = count;
+                  // for(let i = 0; i < n ; i++){
+                  //   document.getElementById('requi').innerHTML = Data.
+                  // }
+
+                  let Data;
+                  data();
+                  async function data() {
+                    const response = await fetch('/info');
+                    const data = await response.json();
+                    Data = data;
+                  }
+                </script>
 
                 <script>
                   // Get the modal
@@ -583,15 +600,7 @@ a:hover, a:active {
                   
 
                 </section> 
-                <script>
-                  function openForm() {
-                    document.getElementById("myForm").style.display = "block";
-                  }
-                  
-                  function closeForm() {
-                    document.getElementById("myForm").style.display = "none";
-                  }
-                </script>
+
         </div>
     </body>
 </html>

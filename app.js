@@ -80,10 +80,19 @@ app.get('/menu', function (req, res) {
         name_en: array[3],
     });
 });
+
 app.post('/menu', function (req, res) {
-    res.render('menu',{
-        name_en: array[3],
-    });
+  let Files = {
+    "username": array[1], 
+    file:req.body.myfile
+  }
+
+  database.count({"file": req.body.myfile }, function (err, count) {
+    if(count == 0){
+        database.insert(Files);
+    }
+  });
+
 });
 app.get('/main', function (req, res) {
     message = "";
@@ -91,15 +100,29 @@ app.get('/main', function (req, res) {
     res.render('login')
 });
 app.get('/request', function (req, res) {
-    
-    res.render('request',{
+    let num = 0;
+    database.count({"username": array[1]}, function (err, count) {
+      num = count;
+    });
+
+    database.find({'username': array[1]}, (err, data) =>{
+      if(err){
+          res.end();
+          return;
+      }
+      res.json(data);
+      res.render('request',{
         name_en: array[3],
+        count: num,
+      })
     })
+
+    
 });
 app.get('/form', function (req, res) {
     res.render('form', {
         name_en: array[3],
-        username: array[1]
+        username: array[1],
     })
 });
 app.post('/attachFiles', function (req, res) {
@@ -161,6 +184,29 @@ app.get('/getData', function (req, res) {
     let a = {status: status, message: message}
     res.json(a);
 })
+app.get('/payment1', function (req, res) {
+  res.render('payment1',{
+      name_en: array[3],
+  })
+});
+app.get('/payment2', function (req, res) {
+    
+  res.render('payment2',{
+      name_en: array[3],
+  })
+});
+app.get('/caseCancel', function (req, res) {
+  res.render('caseCancel',{
+      name_en: array[3],
+  });
+})
+app.get('/caseProblem', function (req, res) {
+  res.render('caseProblem',{
+      name_en: array[3],
+  });
+})
+
+
 var options = {
   'method': 'POST',
   'hostname': 'restapi.tu.ac.th',
