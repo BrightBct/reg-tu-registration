@@ -20,7 +20,7 @@
   }
 
   .login-box {
-      font-family: 'Kanit', sans-serif;
+    font-family: 'Kanit', sans-serif;
     margin-top: 80px;
     position: absolute;
     top: 50%;
@@ -103,12 +103,33 @@
     border-radius: 10px;
   }
 
+  .alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
 </style>
 <body>
   <h1><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Emblem_of_Thammasat_University.svg/1024px-Emblem_of_Thammasat_University.svg.png" style="width:240px;height:240px;"></h1>
 
   <div class="login-box">
-    <h2>เข้าสู่ระบบ(นักศึกษา)</h2>
+    <h2>เข้าสู่ระบบ(นักศึกษา/บุคลากร)</h2>
 
     <form action="/api" method = "post" novalidate>
       <div class="user-box">
@@ -119,7 +140,21 @@
         <input type="password" name="pwd" id="pwd" required>
         <label >รหัสผ่าน</label>
       </div>
-        <input class = 'button' type="submit"  value="เข้าสู่ระบบ">
+      <button class = 'button'>เข้าสู่ระบบ</button>
+      
+      <script>
+      
+      data();
+      async function data() {
+        const response = await fetch('/getData');
+        const data = await response.json();
+        if(data.status == false){
+          alert(data.message);
+        }
+      }
+
+      </script>
+
     </form>
       
   </div>

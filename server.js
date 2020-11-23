@@ -38,10 +38,18 @@ app.get('/menu', function (req, res) {
         name_en: array[3],
     });
 });
+app.post('/menu', function (req, res) {
+    res.render('menu',{
+        name_en: array[3],
+    });
+});
 app.get('/main', function (req, res) {
+    message = "";
+    status = true;
     res.render('login')
 });
 app.get('/request', function (req, res) {
+    
     res.render('request',{
         name_en: array[3],
     })
@@ -52,31 +60,65 @@ app.get('/form', function (req, res) {
         username: array[1]
     })
 });
-app.get('/form2', function (req, res) {
-    getData();
-    let a;
-    async function getData(){
-        const response = await fetch('/form');
-        const data = await response.json();
-        a = JSON.parse(JSON.stringify(data));
-        database.insert(a);
+app.post('/attachFiles', function (req, res) {
+    if(req.body.code == null){
+        console.log("null");
     }
-    res.render('form2', {
-        name: a
-    })
+    let a = {
+        "username": array[1], 
+        topic: req.body.Topic, 
+        to: req.body.To,
+        college_year: req.body.college_year,
+        housenum: req.body.HouseNum,
+        sub_district: req.body.sub_district,
+        district: req.body.district,
+        province: req.body.province,
+        student_phonenumber: req.body.student_phonenumber,
+        relative_phone_number: req.body.relative_phone_number,
+        teacher: req.body.teacher,
+        semester: req.body.semester,
+        era: req.body.era,
+        code: req.body.code,
+        subject: req.body.subject,
+        section: req.body.section,
+        reason: req.body.reason,
+        date: req.body.date,
+        month: req.body.month,
+        year: req.body.year,
+    };
+    database.insert(a);
+    res.render('attachFiles', {
+        name_en: array[3],
+    });
 });
 app.get('/information', function (req, res) {
     res.render('information', {
-            tu_status: array[0],
-            username: array[1],
-            name_th: array[2],
-            name_en: array[3],
-            email: array[4],
-            type: array[5],
-            department: array[6],
-            faculty: array[7],
+        tu_status: array[0],
+        username: array[1],
+        name_th: array[2],
+        name_en: array[3],
+        email: array[4],
+        type: array[5],
+        department: array[6],
+        faculty: array[7],
     });
 });
+app.get('/information2', function (req, res) {
+    res.render('information2', {
+        tu_status: array[0],
+        username: array[1],
+        name_th: array[2],
+        name_en: array[3],
+        email: array[4],
+        type: array[5],
+        department: array[6],
+        organization: array[7],
+    });
+});
+app.get('/getData', function (req, res) {
+    let a = {status: status, message: message}
+    res.json(a);
+})
 var options = {
   'method': 'POST',
   'hostname': 'restapi.tu.ac.th',
@@ -103,8 +145,9 @@ var req = https.request(options, function (res) {
   });
 });
 
-let test = "bright";
 let array = [];
+let status = true;
+let message = "";
 
 app.post("/api", async (req, res) => {
     var temp = await getlogin(req.body.user, req.body.pwd);
@@ -127,20 +170,39 @@ app.post("/api", async (req, res) => {
                         database.insert(j);
                     }
                 });
-            res.render("menu", {
-                tu_status: j.tu_status,
-                username: j.username,
-                name_th: j.displayname_th,
-                name_en: j.displayname_en,
-                email: j.email,
-                type: j.type,
-                department: j.department,
-                faculty: j.faculty,
-            });
+            if(j.type == "student"){
+                res.render("menu", {
+                    tu_status: j.tu_status,
+                    username: j.username,
+                    name_th: j.displayname_th,
+                    name_en: j.displayname_en,
+                    email: j.email,
+                    type: j.type,
+                    department: j.department,
+                    faculty: j.faculty,
+                });
+            }
+            else if(j.type == "employee"){
+                res.render("menu", {
+                    tu_status: j.tu_status,
+                    username: j.username,
+                    name_th: j.displayname_th,
+                    name_en: j.displayname_en,
+                    email: j.email,
+                    type: j.type,
+                    department: j.department,
+                    organization: j.organization,
+                });
+            }
+            
         } else {
+            status = false;
+            message = j.message;
             res.render('login');
         }
     } else {
+        status = false;
+        message = "";
         res.render('login');
     }
 });
@@ -173,4 +235,3 @@ const getlogin = (userName, password) => {
         req.end();
     });
 };
-
