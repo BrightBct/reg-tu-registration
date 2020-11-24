@@ -150,17 +150,17 @@
                 <header>
                     <img src="https://cdn.discordapp.com/attachments/647841986686091264/779335155437142026/New_Project_1_4.png" style="width: 100%;">
                     <div>
-                    <form method="get" action="/menu">
+                    <form method="get" action="/menu2">
                         <button class="btn firstbtn"><strong>หน้าแรก</strong></button> 
                      </form>
-                     <form method="get" action="/request">
+                     <form method="get" action="/request2">
                         <button class="btn secbtn"><strong>รายการคำร้อง</strong></button> 
                      </form>
                      </div>
                      <div class="dropdown">
                         <img src="https://cdn.discordapp.com/attachments/647841986686091264/779316689397481472/arrow.png"  width="22" height="22 ">
                     <div class="dropdown-content w3-dropdown-content w3-bar-block w3-border font" style="right:0">
-                      <form action="/information">
+                      <form action="/information2">
                         <button class="w3-bar-item w3-button">ข้อมูลส่วนตัว</button>
                     </form>
                     <form action="/main">
@@ -171,7 +171,7 @@
                 <section>
                     <br><br>
                     <div class="blur">
-                        <h1 style="font-size: 32px;">เหตุผลที่คำร้องนักศึกษามีปัญหา</h1>
+                        <h1 style="font-size: 32px;">เหตุผลในการยกเลิกคำร้องนักศึกษา</h1>
                         
                         
                         
@@ -179,9 +179,12 @@
 
 
                         <div class="form-group">
-                            <input type="submit" value="ไม่ยอมรับ" class="unaccept form-groupLeft1" onclick="history.back()">
-                            <input type="submit" class="accept form-groupLeft1" value="ยอมรับ">
-                          </div>
+                          <form action="menu2" method="GET">
+                          <input type="button" value="ย้อนกลับ" class="unaccept form-groupLeft1" onclick="history.back()">
+                          
+                              <input type="submit" class="accept form-groupLeft1" value="ยืนยัน">
+                          </form>
+                        </div>
                             
                             
                             

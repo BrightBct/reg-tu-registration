@@ -108,7 +108,7 @@
     background-color:rgb(194, 193, 193);
     opacity: 80%;
     width: 1100px;
-    height: 700px;
+    height: 750px;
     margin-left: 5%;
     padding: 15px;
 }
@@ -139,7 +139,10 @@
   border-radius:28px;
   padding: 10px 14px;
   margin-top:0.5rem;
+}
 
+.form-groupRight{
+  margin-right:0.2rem;
 }
 
 </style>
@@ -171,22 +174,33 @@
                 <section>
                     <br><br>
                     <div class="blur">
-                        <h1 style="font-size: 32px;">เหตุผลที่คำร้องนักศึกษามีปัญหา</h1>
+                        <h1 style="font-size: 32px;">ความเห็น</h1>
                         
                         
                         
                         <textarea name="reason" value="" class="block" rows="8" cols="80" required></textarea>
 
+                        <div class="form-group">
+                            <label for="">วันที่ยื่นคำร้อง : </label>
+                            <input name="date" value="" class="form-groupRight" size="3" required>
+                            <input name="month" value="" class="form-groupRight" size="3" required>
+                            <input name="year" value="" class="form-groupRight" size="3" required>
+                          </div>
+                          
+                          <div class="form-group">
+                            <label for="">เช่น 01/02/2563</label>
+                          </div>   
+
 
                         <div class="form-group">
-                            <form action="menu2" method="GET">
-                            <input type="button" value="ย้อนกลับ" class="unaccept form-groupLeft1" onclick="history.back()">
+                          <form action="menu2" method="GET">
+                          <input type="button" value="ย้อนกลับ" class="unaccept form-groupLeft1" onclick="history.back()">
+                          
+                              <input type="submit" class="accept form-groupLeft1" value="ยืนยัน">
+                          </form>
+                        </div>
                             
-                                <input type="submit" class="accept form-groupLeft1" value="ยืนยัน">
-                            </form>
-                          </div>
-                            
-                            
+                        
                             
                     </div>
 

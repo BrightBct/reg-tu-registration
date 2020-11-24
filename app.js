@@ -66,6 +66,11 @@ app.get('/', function (req, res) {
 app.listen(PORT, function () {
     console.log(`Listening on ${PORT}`)
 });
+app.get('/track', function (req, res) {
+    res.render('track',{
+        name_en: array[3],
+    });
+});
 app.get('/info', function(req, res){
     database.find({'username': array[1]}, (err, data) =>{
         if(err){
@@ -79,6 +84,44 @@ app.get('/menu', function (req, res) {
     res.render('menu',{
         name_en: array[3],
     });
+});
+app.get('/menu2', function (req, res) {
+    res.render('menu2',{
+        name_en: array[3],
+    });
+});
+app.get('/check', function (req, res) {
+    res.render('check',{
+        name_en: array[3],
+
+    });
+});
+app.get('/caseCancel', function (req, res) {
+    res.render('caseCancel',{
+        name_en: array[3],
+
+    });
+});
+app.get('/caseProblem', function (req, res) {
+    res.render('caseProblem',{
+        name_en: array[3],
+
+    });
+});
+app.get('/caseConfirm', function (req, res) {
+    res.render('caseConfirm',{
+        name_en: array[3],
+
+    });
+});
+app.get('/info', function(req, res){
+    database.find({'username': array[1]}, (err, data) =>{
+        if(err){
+            res.end();
+            return;
+        }
+        res.json(data);
+    })
 });
 
 app.post('/menu', function (req, res) {
@@ -105,18 +148,38 @@ app.get('/request', function (req, res) {
       num = count;
     });
 
+    // database.find({'username': array[1]}, (err, data) =>{
+    //   if(err){
+    //       res.end();
+    //       return;
+    //   }
+    //   res.json(data);
+      
+    // })
+    res.render('request',{
+        name_en: array[3],
+        count: num,
+      })
+    
+});
+app.get('/request2', function (req, res) {
+    let num = 0;
+    database.count({"username": array[1]}, function (err, count) {
+      num = count;
+    });
+
     database.find({'username': array[1]}, (err, data) =>{
       if(err){
           res.end();
           return;
       }
       res.json(data);
-      res.render('request',{
+      
+    })
+    res.render('request2',{
         name_en: array[3],
         count: num,
-      })
     })
-
     
 });
 app.get('/form', function (req, res) {
@@ -177,7 +240,7 @@ app.get('/information2', function (req, res) {
         email: array[4],
         type: array[5],
         department: array[6],
-        organization: array[7],
+        organization: array[8],
     });
 });
 app.get('/getData', function (req, res) {
@@ -253,6 +316,7 @@ app.post("/api", async (req, res) => {
                 array[5] = j.type;
                 array[6] = j.department;
                 array[7] = j.faculty;
+                array[8] = j.organization;
                 database.count({"username": j.username }, function (err, count) {
                     if(count == 0){
                         database.insert(j);
@@ -271,7 +335,7 @@ app.post("/api", async (req, res) => {
                 });
             }
             else if(j.type == "employee"){
-                res.render("menu", {
+                res.render("menu2", {
                     tu_status: j.tu_status,
                     username: j.username,
                     name_th: j.displayname_th,

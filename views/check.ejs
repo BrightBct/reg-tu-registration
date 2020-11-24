@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <link href="https://fonts.googleapis.com/css?family=Kanit|Merriweather" rel="stylesheet">
  
@@ -27,7 +27,7 @@ section{
     background-repeat: no-repeatk;
     background-size: 100% 100%;
     width:  auto;
-    height: 800px;
+    height: 1400px;
 }
 body{
     background-image: url(" https://moodle.tu.ac.th/pluginfile.php/1/theme_lambda/pagebackground/1594184250/bg2.png");
@@ -52,7 +52,7 @@ body{
 }
 
 .container .btn {
-  top: 17.5%;
+  top: 11.1%;
   float: left;
   font-family: 'Kanit', sans-serif;
   color: black;
@@ -80,7 +80,7 @@ body{
 }
 
 .dropdown {
-  top: 16.3%;
+  top: 10.3%;
   left: 96.4%;
   position: absolute;
   display: inline-block;
@@ -106,18 +106,26 @@ body{
 }
 
 .container2{
-    width: 1000px;
-    height: 750px;
-    padding: 35px;
-    padding-left: 100px;
-    top: 70px;
-    left: 10px;
+    width: 900px;
+    height: 670px;
+    padding: 0px;
+    padding-left: 60px;
+    top: 25px;
+    left: 1px;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
-    background: rgba(228, 221, 221, 0.5);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    background: white;
     text-transform: lowercase;
+}
+.container2border{
+  top: 40px;
+  left: 19px;
+  width: 960px;
+  height: 725px;
+  background-color: #f8e59c;
+  position: relative;
+  margin: 0  auto;
 }
 
 .form-group{
@@ -150,19 +158,87 @@ body{
 .displayname{
   position: absolute;
   right: 12%;
-  top: 7.9%;
+  top: 4.9%;
   font-family: 'Kanit', sans-serif;
   font-size: 20px;
   color: #bf1824;
   text-align-last: right;
   
 }
+.container3{
+  
+    width: 900px;
+    height: 170px;
+    padding: 0px;
+    padding-left: 60px;
+    top: 25px;
+    left: 1px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    background: white;
+    text-transform: lowercase;
+}
+.container3border{
+  top: 60px;
+  left: 19px;
+  width: 960px;
+  height: 225px;
+  background-color: #f8e59c;
+  position: relative;
+  margin: 0  auto;
+}
+.choice{
+  top: 90px;
+  left: 150px;
+  width: 960px;
+  height: 225px;
+  font-size: 20px;
+  position: relative;
+  }
+  .unaccept{
+    font-family: 'Kanit', sans-serif;
+    color: red;
+    background-color: #e6e5e5;
+    border: none;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 28px;
+    position: absolute;
+    top: 90%;
+    left: 36%;
+    font-weight: bold;
+}
 
+.accept{
+    color: #137157;
+    font-family: 'Kanit', sans-serif;
+    background-color: #e6e5e5;
+    border: none;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 28px;
+    position: absolute;
+    top: 90%;
+    left: 52%;
+    font-weight: bold;
+  } 
+  .choicelist{
+    background-color: #f8e59c;
+    padding-left: 10px;
+    border: solid black;
+    position: relative;
+  }
 </style>
 
     </head>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <body>
+    
         <div class="container">
                 <header>
                     <img src="https://cdn.discordapp.com/attachments/647841986686091264/779335155437142026/New_Project_1_4.png" style="width: 100%;">
@@ -187,19 +263,20 @@ body{
                     </div>
                 </header>
                 <section>
+                <div class="container2border">
                   <div class="container2">
-                    <form action="/attachFiles" method="post">
-                      <div class="form-group">
+                    <form>
+                      <div class="form-group"><br>
                         <label for="">เรื่อง : </label>
-                        <input name="Topic" value="จดทะเบียนล่าช้า" class="form-group" readonly>
+                        <input name="Topic" value="จดทะเบียนล่าช้า" class="form-group" disabled>
                       </div>
                       <div class="form-group">
                         <label for="">เรียน : </label>
-                        <input type="text" name="To" value="ผอ.โครงการฯ" class="form-group" readonly>
+                        <input type="text" name="To" value="ผอ.โครงการฯ" class="form-group" disabled>
                       </div>
                       <div class="form-group">
                         <label for="">ชั้นปีที่ : </label>
-                          <select name="college_year" required>
+                          <select name="college_year" disabled>
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -216,41 +293,41 @@ body{
                       </div>
                       <div class="form-group">
                         <label for="">บ้านเลขที่ : </label>
-                        <input name="HouseNum" value="" class="form-group" size="5" required>
+                        <input name="HouseNum" value="" class="form-group" size="5" disabled>
 
                         <label for="" class="form-groupLeft">แขวง/ตำบล : </label>
-                        <input name="sub_district" value="" class="form-group" size="10" required>
+                        <input name="sub_district" value="" class="form-group" size="10" disabled>
 
                         <label for="" class="form-groupLeft">เขต/อำเภอ : </label>
-                        <input name="district" value="" class="form-group" size="10" required>
+                        <input name="district" value="" class="form-group" size="10" disabled>
 
                         <label for="" class="form-groupLeft">จังหวัด : </label>
-                        <input name="province" value="" class="form-group" size="10" required>
+                        <input name="province" value="" class="form-group" size="10" disabled>
 
                       </div>
 
                       <div class="form-group">
                         <label for="">โทรศัพท์ติดต่อนักศึกษา : </label>
-                        <input name="student_phonenumber" value="" class="form-group" size="10" required>
+                        <input name="student_phonenumber" value="" class="form-group" size="10" disabled>
 
                         <label for="">โทรศัพท์ติดต่อผู้ปกครอง : </label>
-                        <input name="relative_phone_number" value="" class="form-group" size="10" required>
+                        <input name="relative_phone_number" value="" class="form-group" size="10" disabled>
                       </div>
                       <div class="form-group">
                         <label for="">อาจารย์ที่ปรึกษา : </label>
-                        <input name="teacher" value="" class="form-group" size="20" required>
+                        <input name="teacher" value="" class="form-group" size="20" disabled>
                       </div>
 
                       <div class="form-group">
                         <label for=""><strong>จดทะเบียนล่าช้า/เพิ่มล่าช้า ภาคการศึกษาที่</strong></label>
-                          <select name="semester" required>
+                          <select name="semester" disabled>
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                           </select>
                         <label for="" class="form-groupLeft">/</label>
-                          <select name="era" required>
+                          <select name="era" disabled>
                             <option value=""></option>
                             <option value="2561">2561</option>
                             <option value="2562">2562</option>
@@ -267,13 +344,13 @@ body{
 
                       <div class="form-group">
                         <label for="">รหัสวิชา : </label>
-                        <input name="code" value="" class="form-group" size="10" required>
+                        <input name="code" value="" class="form-group" size="10" disabled>
 
                         <label for="">ชื่อวิชา : </label>
-                        <input name="subject" value="" class="form-group" size="10" required>
+                        <input name="subject" value="" class="form-group" size="10" disabled>
 
                         <label for="">section : </label>
-                        <select name="section" required>
+                        <select name="section" disabled>
                           <option value=""></option>
                           <option value="650001">650001</option>
                           <option value="650002">650002</option>
@@ -285,30 +362,50 @@ body{
                       </div>
 
                       <div class="form-group">
-                        <textarea name="reason" value="" class="form-group" rows="8" cols="80" required></textarea>
+                        <textarea name="reason" value="" class="form-group" rows="8" cols="80" disabled></textarea>
                       </div>
 
                       <div class="form-group">
                         <label for="">วันที่ยื่นคำร้อง : </label>
-                        <input name="date" value="" class="form-groupRight" size="3" required>
-                        <input name="month" value="" class="form-groupRight" size="3" required>
-                        <input name="year" value="" class="form-groupRight" size="3" required>
+                        <input name="date" value="" class="form-groupRight" size="3" disabled>
+                        <input name="month" value="" class="form-groupRight" size="3" disabled>
+                        <input name="year" value="" class="form-groupRight" size="3" disabled>
                       </div>
                       
                       <div class="form-group">
                         <label for="">เช่น 01/02/2563</label>
                       </div>
-
-                      <div class="form-group">
-                        <input type="button" value="ย้อนกลับ" class="unaccept form-groupLeft1" onclick="history.back()">
-                        <input type="submit" class="accept form-groupLeft1" value="ถัดไป">
-                      </div>
                     </form>
-                      
-                      
                   </div>
-                  
+                </div>
+                <div class="container3border">
+                <div class="container3">
+                  <p style="text-align: left; font-size: 20px; margin-top: 1%;"><strong>ไฟล์เอกสารเพิ่มเติม</strong></p><br>
+                </div>
+                </div>
+
+                <div class="choice">
+                <form action="/caseConfirm" method="GET">
+                  <input type="submit" value="ยื่นยันคำร้องนักศึกษา&nbsp&nbsp" class ="choicelist">&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</label><br><br>
+                </form>
+                <form action="/caseCancel" method="GET">
+                  <input type="submit" value="ยกเลิกคำร้องนักศึกษา&nbsp&nbsp" class ="choicelist">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</label><br><br>
+                </form>
+                <form action="/caseProblem" method="GET">
+                  <input type="submit" value="คำร้องนักศึกษามีปัญหา&nbsp&nbsp" class ="choicelist">&nbsp &nbsp &nbsp &nbsp &nbsp </label>  
+                </form>
+                </div>
+                
+                <!-- <div>
+                  <form method="GET" action='form' contenteditable="false" data-new-gr-c-s-check-loaded="14.984.0 data-gr-ext-installed">
+                    <input type="submit" class="unaccept" value="ย้อนกลับ">
+
+                    <input type="button" value="ถัดไป" class="accept" onclick="closeForm()">
+                  </form>
+                </div> -->
                 </section> 
+                
         </div>
+   
     </body>
 </html>
